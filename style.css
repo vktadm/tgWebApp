@@ -49,5 +49,5 @@ button {
 }
 
 button:hover {
-    background: var(--tg--theme-secondary-bg-color)
+    background: var(--tg--theme-secondary-bg-color);
 }
