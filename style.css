@@ -9,7 +9,6 @@
 body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 200;
-    color: var(--tg-theme-text-color);
     background: var(--tg-theme-bg-color);
 }
 
@@ -44,8 +43,13 @@ button {
     font-weight: 500;
     cursor: pointer;
     transition: all 500ms ease;
-    color: var(--tg-theme-text-color);
-    background: var(--tg-theme-button-color);
+    color: white;
+    background: #ff9687;
+}
+
+button:hover {
+    color: #ff9687;
+    background: antiquewhite;
 }
 
 #form {
@@ -59,10 +63,10 @@ input {
     margin: 10px 5%;
     padding: 15px 10px;
     font-size: 14px;
-    border: 2px solid silver;
+    border: 2px solid antiquewhite;
     border-radius: 5px;
 }
 
 input:focus {
-    border-color: #db5d5d;
+    border-color: #ff9687;
 }
