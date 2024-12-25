@@ -12,6 +12,27 @@
         <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Taciti nam odio semper nec fusce platea.</p>
         <button id="buy">Buy now!</button>
     </div>
+    <form id="form">
+        <input type="text" placeholder="Name" id="username">
+        <input type="text" placeholder="Email" id="email">
+        <input type="text" placeholder="Phone" id="phone">
+        <button id="order">Order</button>
+    </form>
     <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+    <script>
+        let tg = window.Telegram.WebApp;
+        let buy = document.getElementById("buy");
+        let buy = document.getElementById("buy");
+
+        buy.addEventListener("click", () => {
+            document.getElementById("main").style.display = "none";
+            document.getElementById("main").style.display = "block";
+            document.getElementById("username").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
+        });
+
+        order.addEventListener("click", () => {
+            tg.close;
+        });
+    </script>
 </body>
 </html>
