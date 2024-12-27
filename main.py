@@ -13,10 +13,10 @@ dp = Dispatcher()
 @dp.message(Command(commands="start"))
 async def info(message: types.Message):
     button_list = [
-        [types.KeyboardButton(text='Open web page', web_app=WebAppInfo(url='https://vktadm.github.io/tgWebApp/'))],
+        [types.InlineKeyboardButton(text='Open web page', web_app=WebAppInfo(url='https://vktadm.github.io/tgWebApp/'))],
     ]
     # Inline кнопки в чате
-    markup = types.ReplyKeyboardMarkup(keyboard=button_list)
+    markup = types.InlineKeyboardMarkup(inline_keyboard=button_list)
     await message.reply('Hello 🦁', reply_markup=markup)
 async def main():
     await dp.start_polling(bot)
