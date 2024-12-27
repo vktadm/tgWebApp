@@ -17,6 +17,7 @@
         <input type="text" placeholder="Name" id="username">
         <input type="text" placeholder="Email" id="email">
         <input type="text" placeholder="Phone" id="phone">
+        <div id="error"></div>
         <button id="order">Order</button>
     </form>
     <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
@@ -24,6 +25,7 @@
         let tg = window.Telegram.WebApp;
         let buy = document.getElementById("buy");
         let order = document.getElementById("order");
+        tg.expand();
 
         buy.addEventListener("click", () => {
             document.getElementById("main").style.display = "none";
@@ -32,6 +34,24 @@
         });
 
         order.addEventListener("click", () => {
+            document.getElementById("error").innerText = "";
+
+            let name = document.getElementById("username").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+
+            if(name.length < 5){
+                document.getElementById("error").innerText = "Mistake in name";
+                return;
+            }
+            if(email.length < 5){
+                document.getElementById("error").innerText = "Mistake in e-mail";
+                return;
+            }
+            if(phone.length < 5){
+                document.getElementById("error").innerText = "Mistake in phone";
+                return;
+            }
             tg.close();
         });
     </script>
